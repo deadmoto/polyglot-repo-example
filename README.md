@@ -1,8 +1,8 @@
 # Bazel starter kit for C++
 
 ## Build
-`bazel build main`
+`bazelisk build main`
 
 ## Run
-`bazel run main`
+`bazelisk run main`
 
