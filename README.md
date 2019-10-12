@@ -5,4 +5,3 @@
 
 ## Run
 `bazelisk run main`
-
