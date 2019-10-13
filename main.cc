@@ -1,6 +1,9 @@
 #include <iostream>
+#include "proto/example.pb.h"
 
 int main() {
-    std::cout << "Yo!" << std::endl;
+    example::Msg msg;
+    msg.set_text("Yo!");
+    std::cout << msg.DebugString() << std::endl;
     return 0;
 }
