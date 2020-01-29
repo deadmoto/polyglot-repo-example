@@ -15,6 +15,7 @@ using echo::EchoResponse;
 class GreeterServiceImpl final : public EchoService::Service {
     Status Echo(ServerContext* context, const EchoRequest* request, EchoResponse* response) override {
         std::string prefix("echo -> ");
+        std::cout << "Echo: " << request->text() << std::endl;
         response->set_text(prefix + request->text());
         return Status::OK;
     }
