@@ -1,7 +1,11 @@
 # Bazel starter kit for C++
 
-## Build
-`bazelisk build main`
-
 ## Run
-`bazelisk run main`
+
+### Server
+
+`bazelisk run //cpp:echo_server`
+
+### Client
+
+`bazelisk run //cpp:echo_client`

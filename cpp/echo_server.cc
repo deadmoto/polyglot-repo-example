@@ -1,16 +1,16 @@
 #include <iostream>
 #include <grpcpp/grpcpp.h>
-#include "proto/example.pb.h"
-#include "proto/example.grpc.pb.h"
+#include "proto/echo.pb.h"
+#include "proto/echo.grpc.pb.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 
-using example::EchoService;
-using example::EchoRequest;
-using example::EchoResponse;
+using echo::EchoService;
+using echo::EchoRequest;
+using echo::EchoResponse;
 
 class GreeterServiceImpl final : public EchoService::Service {
     Status Echo(ServerContext* context, const EchoRequest* request, EchoResponse* response) override {
