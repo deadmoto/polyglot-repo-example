@@ -80,3 +80,4 @@ gazelle_dependencies()
 load("@rules_proto_grpc//go:repositories.bzl", rules_proto_grpc_go_repos = "go_repos")
 
 rules_proto_grpc_go_repos()
+
