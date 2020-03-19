@@ -1,6 +1,7 @@
 load("@rules_proto//proto:defs.bzl", "proto_library")
 load("@com_github_grpc_grpc//bazel:cc_grpc_library.bzl", "cc_grpc_library")
 load("@rules_proto_grpc//go:defs.bzl", "go_grpc_library")
+load("@rules_proto_grpc//java:defs.bzl", "java_grpc_library")
 
 proto_library(
     name = "echo_proto",
@@ -23,6 +24,12 @@ cc_grpc_library(
 go_grpc_library(
     name = "echo_go_grpc",
     importpath = "echo",
+    visibility = ["//visibility:public"],
+    deps = [":echo_proto"],
+)
+
+java_grpc_library(
+    name = "echo_java_grpc",
     visibility = ["//visibility:public"],
     deps = [":echo_proto"],
 )

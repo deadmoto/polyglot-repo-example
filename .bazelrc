@@ -1,0 +1,2 @@
+# @com_google_protobuf_javalite// uses deprecated features
+query --incompatible_disable_deprecated_attr_params=false

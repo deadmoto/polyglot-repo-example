@@ -13,3 +13,7 @@
 ### Golang client
 
 `bazel run //golang:echo_client`
+
+### Java client
+
+`bazel run //java:echo_client`
