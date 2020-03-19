@@ -14,7 +14,7 @@ echo Changed files:
 printf " - %s\n" ${files[@]}
 echo
 
-declare -a targets=($(bazel query "rdeps(//...,set(${files[@]}))" 2>/dev/null))
+declare -a targets=($(bazel query --keep_going "rdeps(//...,set(${files[@]}))" 2>/dev/null))
 if [[ ${#targets[@]} -eq 0 ]]; then
     echo No changed targets
     exit 0
