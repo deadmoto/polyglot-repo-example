@@ -8,3 +8,14 @@ java_binary(
         "//proto:echo_java_grpc",
     ],
 )
+
+java_binary(
+    name = "echo_server",
+    srcs = [
+        "EchoServer.java",
+    ],
+    main_class = "EchoServer",
+    deps = [
+        "//proto:echo_java_grpc",
+    ],
+)
