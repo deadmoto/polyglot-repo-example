@@ -1,6 +1,7 @@
+package com.example;
+
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import proto.EchoProto;
 import proto.EchoProto.EchoRequest;
 import proto.EchoProto.EchoResponse;
 import proto.EchoServiceGrpc;

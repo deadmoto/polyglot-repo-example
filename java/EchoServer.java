@@ -1,3 +1,5 @@
+package com.example;
+
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
 import proto.EchoProto.EchoRequest;
