@@ -2,6 +2,52 @@ workspace(name = "starter_kit")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+# Python
+http_archive(
+    name = "rules_python",
+    url = "https://github.com/bazelbuild/rules_python/releases/download/0.2.0/rules_python-0.2.0.tar.gz",
+    sha256 = "778197e26c5fbeb07ac2a2c5ae405b30f6cb7ad1f5510ea6fdac03bded96cc6f",
+)
+
+python3_build_file = """
+exports_files(["python3"])
+filegroup(
+    name = "files",
+    srcs = glob(["bazel_install/**"], exclude = ["**/* *"]),
+    visibility = ["//visibility:public"],
+)
+"""
+http_archive(
+    name = "python3",
+    urls = ["https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tar.xz"],
+    sha256 = "dfab5ec723c218082fe3d5d7ae17ecbdebffa9a1aea4d64aa3a2ecdd2e795864",
+    strip_prefix = "Python-3.8.3",
+    patch_cmds = [
+        "mkdir $(pwd)/bazel_install",
+        """
+        if [[ "$OSTYPE" == "darwin"* ]]; then
+            ./configure --prefix=$(pwd)/bazel_install --with-openssl=$(brew --prefix openssl)
+        else
+            ./configure --prefix=$(pwd)/bazel_install
+        fi
+        """,
+        "make -j8",
+        "make -j8 install",
+        "ln -s bazel_install/bin/python3 python3",
+    ],
+    build_file_content = python3_build_file,
+)
+
+register_toolchains("//external/python:python3_toolchain")
+
+load("@rules_python//python:pip.bzl", "pip_install")
+
+pip_install(
+    name = "python3_deps",
+    requirements = "//external/python:requirements.txt",
+    python_interpreter_target = "@python3//:python3",
+)
+
 # ProtoBuf
 http_archive(
     name = "rules_proto",

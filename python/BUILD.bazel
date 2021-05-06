@@ -1,0 +1,8 @@
+load("@python3_deps//:requirements.bzl", "requirement")
+
+py_binary(
+    name = "client",
+    srcs = [
+        "client.py",
+    ],
+)
