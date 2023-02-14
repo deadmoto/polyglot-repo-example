@@ -25,11 +25,11 @@ go_grpc_library(
     name = "echo_go_grpc",
     importpath = "echo",
     visibility = ["//visibility:public"],
-    deps = [":echo_proto"],
+    protos = [":echo_proto"],
 )
 
 java_grpc_library(
     name = "echo_java_grpc",
     visibility = ["//visibility:public"],
-    deps = [":echo_proto"],
+    protos = [":echo_proto"],
 )
