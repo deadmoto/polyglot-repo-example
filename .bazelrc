@@ -1,1 +1,2 @@
 # Bazel local configuration
+build --copt=-std=c++14
