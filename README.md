@@ -14,6 +14,10 @@
 
 `bazel run //golang:echo_client`
 
+### Golang server
+
+Not implemented yet.
+
 ### Java client
 
 `bazel run //java:echo_client`
@@ -21,3 +25,11 @@
 ### Java server
 
 `bazel run //java:echo_server`
+
+### Python client
+
+Not implemented yet.
+
+### Python server
+
+Not implemented yet.
