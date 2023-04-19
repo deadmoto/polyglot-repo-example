@@ -2,6 +2,8 @@
 
 ## Run
 
+Start a new Nix shell: `nix-shell`
+
 ### C++ client
 
 `bazel run //cpp:echo_client`
