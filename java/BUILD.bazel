@@ -3,7 +3,7 @@ java_binary(
     srcs = [
         "EchoClient.java",
     ],
-    main_class = "EchoClient",
+    main_class = "com.example.EchoClient",
     deps = [
         "//proto:echo_java_grpc",
     ],
@@ -14,7 +14,7 @@ java_binary(
     srcs = [
         "EchoServer.java",
     ],
-    main_class = "EchoServer",
+    main_class = "com.example.EchoServer",
     deps = [
         "//proto:echo_java_grpc",
     ],
