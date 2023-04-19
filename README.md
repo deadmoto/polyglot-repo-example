@@ -1,4 +1,4 @@
-# Bazel starter kit for C++
+# Bazel starter kit for Go/Java/Python/C++
 
 ## Run
 
