@@ -1,2 +1,7 @@
 # Bazel local configuration
-build --cxxopt=-std=c++14
+build --cxxopt=-std=c++17
+build --host_cxxopt=-std=c++17
+
+# Fix for gcc 14+ strict mode (implicit function declarations)
+build --copt=-Wno-error=implicit-function-declaration
+build --host_copt=-Wno-error=implicit-function-declaration
