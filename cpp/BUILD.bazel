@@ -3,7 +3,7 @@ cc_binary(
     srcs = ["echo_client.cc"],
     deps = [
         "//proto:echo_cc_grpc",
-        "@com_github_grpc_grpc//:grpc++",
+        "@grpc//:grpc++",
     ],
 )
 
@@ -12,6 +12,6 @@ cc_binary(
     srcs = ["echo_server.cc"],
     deps = [
         "//proto:echo_cc_grpc",
-        "@com_github_grpc_grpc//:grpc++",
+        "@grpc//:grpc++",
     ],
 )

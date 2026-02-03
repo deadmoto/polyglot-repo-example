@@ -4,9 +4,10 @@ module(
 )
 
 # Protobuf and gRPC
-bazel_dep(name = "protobuf", version = "29.3")
+bazel_dep(name = "protobuf", version = "30.2")
+bazel_dep(name = "protobuf", version = "30.2")
 bazel_dep(name = "rules_proto", version = "7.1.0")
-bazel_dep(name = "grpc", version = "1.66.0", repo_name = "com_github_grpc_grpc")
+bazel_dep(name = "grpc", version = "1.73.1")
 
 # rules_proto_grpc 5.x modules for language-specific proto/gRPC rules
 bazel_dep(name = "rules_proto_grpc_cpp", version = "5.0.1")
